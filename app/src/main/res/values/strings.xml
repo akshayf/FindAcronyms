@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">FindAcronyms</string>
+    <string name="app_name">FindFullFormsOfAcronyms</string>
     <string name="acro_init_hint">Enter an acronym or initialism</string>
+    <string name="full_form">Full Forms:</string>
     <string name="search_acronyms">Search</string>
     <string name="not_valid_acronyms">Not the valid Acronym</string>
-    <string name="no_data_for_acronyms">No data for Acronym</string>
+    <string name="no_data_for_acronyms">No FullForms data for Acronym</string>
 </resources>

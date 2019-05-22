@@ -6,6 +6,7 @@ import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit
 
 /**
  * RetrofitClient for network calls
+ * Sets cache and logging interceptors
  */
 object RetrofitClient {
 
@@ -36,11 +38,15 @@ object RetrofitClient {
                 .build()
         }
 
+        val logging = HttpLoggingInterceptor()
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+
         // Create the httpClient, configure it
         // with cache, network cache interceptor and logging interceptor
         val httpClient = OkHttpClient.Builder()
             .cache(cache)
             .addNetworkInterceptor(networkCacheInterceptor)
+            .addInterceptor(logging)
             .build()
 
         // Create the Retrofit with the httpClient

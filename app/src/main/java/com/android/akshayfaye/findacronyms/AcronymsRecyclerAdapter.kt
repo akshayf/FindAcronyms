@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.akshayfaye.findacronyms.data.LongFormData
 import kotlinx.android.synthetic.main.acronyms_details.view.*
 
+/**
+ * Recycler Adapter for RecyclerView
+ * @param context
+ */
 class AcronymsRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<AcronymsRecyclerAdapter.ViewHolder>(){
 
     private var longFormDataDataList : List<LongFormData> = mutableListOf()
@@ -38,9 +42,13 @@ class AcronymsRecyclerAdapter(private val context: Context) : RecyclerView.Adapt
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
         val fullnameTextView = view.fullname_text_view
+        val freqTextView = view.freq_text_view
+        val sinceTextView = view.since_text_view
 
         fun setData(longFormData: LongFormData){
             fullnameTextView?.text = longFormData.lf
+            freqTextView?.text = "Frequency: ${longFormData.freq}"
+            sinceTextView?.text = "Since: ${longFormData.since}"
         }
     }
 }

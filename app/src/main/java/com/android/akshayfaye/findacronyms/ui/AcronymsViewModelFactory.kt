@@ -4,6 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.android.akshayfaye.findacronyms.data.AcronymsRepository
 
+/**
+ * Factory class for View Model
+ * @param acronymsRepository
+ * @return Instance of Factory
+ */
 class AcronymsViewModelFactory(private val acronymsRepository : AcronymsRepository)
     : ViewModelProvider.NewInstanceFactory(){
 
